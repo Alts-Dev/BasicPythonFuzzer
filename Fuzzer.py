@@ -1,12 +1,10 @@
-from curses.ascii import alt
-from http import client
 import socket, sys, time
 
 
 host = sys.argv[1]
 port = int(sys.argv[2])
 
-length = 100
+length = 0
 
 while(length <= 3000):
     client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -18,5 +16,4 @@ while(length <= 3000):
     client.recv(1024) 
     client.close() 
     time.sleep(2)
-    print("Length Sent: " + str(length))
     length += 100
